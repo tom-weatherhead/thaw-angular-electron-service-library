@@ -1,0 +1,25 @@
+{
+	"$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+	"lib": {
+		"entryFile": "public_api.ts",
+		"umdModuleIds": {
+			"electron": "electron",
+			"thaw-common-utilities.ts": "thaw-common-utilities.ts",
+			"thaw-image-processing.ts": "thaw-image-processing.ts"
+		}
+	},
+	"whitelistedNonPeerDependencies": [
+		"@angular/common",
+		"@angular/compiler",
+		"@angular/core",
+		"@angular/forms",
+		"@angular/localize",
+		"@angular/platform-browser",
+		"@angular/router",
+		"electron",
+		"rxjs",
+		"thaw-common-utilities.ts",
+		"thaw-image-processing.ts",
+		"zone.js"
+	]
+}

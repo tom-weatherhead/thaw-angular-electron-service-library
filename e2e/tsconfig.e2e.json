@@ -1,0 +1,23 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"outDir": "../out-tsc/e2e",
+		"target": "es5",
+		"types": [
+			"mocha",
+			"chai",
+			"node"
+		]
+	},
+	"files": [
+		"src/main.ts",
+		"src/polyfills.ts"
+	],
+	"include": [
+		"**.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
