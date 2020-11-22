@@ -1,6 +1,6 @@
 {
 	"name": "thaw-angular-electron-service-library",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Electron functionality packaged as Angular services",
 	"keywords": [
 		"Angular",

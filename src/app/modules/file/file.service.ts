@@ -2,23 +2,9 @@
 
 import { Injectable } from '@angular/core';
 
-import { decode } from 'jpeg-js';
-
 import { createFileIOManager, IThAWImage } from 'thaw-image-processing.ts';
 
-// import {
-// 	// ICreateImageOptions,
-// 	IImage
-// } from '../../interfaces/iimage.interface';
-
 import { ElectronService } from '../electron/electron.service';
-
-// import {
-// 	// createCanvasImage,
-// 	// createImage
-// 	// createImageFromExistingData
-// 	createOffscreenImage
-// } from '../../models/image.model';
 
 // interface IElectronOffscreenImage {
 // 	width: number;
