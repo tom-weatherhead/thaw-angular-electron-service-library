@@ -10,7 +10,7 @@ services:
   - xvfb
 branches:
   only:
-    - master
+    - main
 cache:
   directories:
     - node_modules
