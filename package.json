@@ -59,6 +59,7 @@
 		"packit": "npm run packagr && cd dist && npm pack && cd ..",
 		"deploy": "eval mv dist/$npm_package_name-$npm_package_version.tgz $(echo $npm_package_config_deploy_target_dir)/",
 		"pack-and-deploy": "ng build --prod && npm run packit && npm run deploy",
+		"// NOTE BENE about publishing": "Publish the dist dir, not the . dir; i.e. npm publish dist",
 		"pack-and-publish": "ng build --prod && npm run packagr && npm publish dist",
 		"start": "npm run all",
 		"gen-module": "ng generate module",
