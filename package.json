@@ -83,7 +83,7 @@
 		"@angular/platform-browser": "^11.0.1",
 		"@angular/platform-browser-dynamic": "^11.0.1",
 		"@angular/router": "^11.0.1",
-		"electron": "<11",
+		"electron": "10.3.2",
 		"rxjs": "^6.6.3",
 		"thaw-common-utilities.ts": "^0.0.3",
 		"thaw-image-processing.ts": "^0.0.2",
