@@ -369,10 +369,7 @@ export class ElectronService {
 		);
 	}
 
-	public sendAsynchronousMessage(
-		channel: string,
-		...args: unknown[]
-	): void {
+	public sendAsynchronousMessage(channel: string, ...args: unknown[]): void {
 		// Angular sends an Electron IPC message to the Electron main process.
 
 		if (isElectronAvailable()) {
@@ -455,9 +452,7 @@ export class ElectronService {
 							resolve(true);
 						} else {
 							reject(
-								new Error(
-									'Could not set the ProgressBarValue'
-								)
+								new Error('Could not set the ProgressBarValue')
 							);
 						}
 					}
