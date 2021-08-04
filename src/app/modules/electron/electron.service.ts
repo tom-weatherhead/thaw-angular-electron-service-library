@@ -70,7 +70,7 @@ export class ElectronService {
 	private crashReporter: typeof crashReporter;
 	private desktopCapturer: typeof desktopCapturer;
 	private _ipcRenderer: typeof ipcRenderer;
-	private process: typeof process;
+	private _process: typeof process;
 	private remote: typeof remote;
 	private screen: typeof screen;
 	private shell: typeof shell;
@@ -80,7 +80,6 @@ export class ElectronService {
 	private _fs: typeof fs;
 	private _os: typeof os;
 	private _path: typeof path;
-	// private _process: typeof process;
 
 	constructor() {
 		if (isElectronAvailable()) {
@@ -92,7 +91,7 @@ export class ElectronService {
 			this.crashReporter = electron.crashReporter;
 			this.desktopCapturer = electron.desktopCapturer;
 			this._ipcRenderer = electron.ipcRenderer;
-			this.process = electron.remote.process;
+			this._process = electron.remote.process;
 			this.screen = electron.screen;
 			this.shell = electron.shell;
 			this.webFrame = electron.webFrame;
@@ -211,6 +210,10 @@ export class ElectronService {
 		return this._fs;
 	}
 
+	public get homedir(): string {
+		return this._process.env['HOME'];
+	}
+
 	public get os(): typeof os {
 		return this._os;
 	}
@@ -219,12 +222,12 @@ export class ElectronService {
 		return this._path;
 	}
 
-	// public get process(): typeof process {
-	// 	return this.process;
-	// }
+	public get process(): typeof process {
+		return this._process;
+	}
 
 	public cwd(): string {
-		return this.process.cwd();
+		return this._process.cwd();
 	}
 
 	public openGitHubInBrowser(): void {
