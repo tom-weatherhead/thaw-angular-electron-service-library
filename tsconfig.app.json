@@ -16,6 +16,9 @@
 		"src/test.ts",
 		"src/**/*.spec.ts",
 		"src/app/app-routing.module.ts",
+		"src/app/modules/configuration/*.ts",
+		"src/app/modules/file/*.ts",
+		"src/app/modules/logger/*.ts",
 		"src/environments/environment.dev.ts",
 		"src/environments/environment.prod.ts"
 	]

@@ -1,5 +1,6 @@
 // angular-electron/src/app/services/file.service.ts
 
+/*
 import { Injectable } from '@angular/core';
 
 import { createFileIOManager, IThAWImage } from 'thaw-image-processing.ts';
@@ -61,3 +62,4 @@ export class FileService {
 		return fileManager.load(filePath);
 	}
 }
+ */

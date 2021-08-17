@@ -3,12 +3,10 @@
 	"lib": {
 		"entryFile": "public_api.ts",
 		"umdModuleIds": {
-			"electron": "electron",
-			"thaw-common-utilities.ts": "thaw-common-utilities.ts",
-			"thaw-image-processing.ts": "thaw-image-processing.ts"
+			"electron": "electron"
 		}
 	},
-	"whitelistedNonPeerDependencies": [
+	"allowedNonPeerDependencies": [
 		"@angular/common",
 		"@angular/compiler",
 		"@angular/core",
@@ -18,8 +16,6 @@
 		"@angular/router",
 		"electron",
 		"rxjs",
-		"thaw-common-utilities.ts",
-		"thaw-image-processing.ts",
 		"zone.js"
 	]
 }

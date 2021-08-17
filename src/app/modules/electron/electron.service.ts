@@ -1,4 +1,4 @@
-// angular-electron/src/app/services/electron/electron.service.ts
+// thaw-angular-electron-service-library/src/app/modules/services/electron/electron.service.ts
 
 // // If you import a module but never use any of the imported values other than as TypeScript types,
 // // the resulting javascript file will look as if you never imported the module at all.
@@ -19,13 +19,13 @@ import {
 import {
 	app,
 	// App,
-	BrowserView,
+	// BrowserView,
 	BrowserWindow, // Available to the Main process, not the Renderer process
 	// BrowserWindowProxy, // Returned to the Renderer process by window.open()
 	clipboard, // Clipboard,			// Not yet used
 	// ContextBridge,		// Not yet used
-	crashReporter, // Not yet used
-	desktopCapturer, // Not yet used
+	// crashReporter, // Not yet used
+	// desktopCapturer, // Not yet used
 	Display,
 	// Dock,
 	// ipcMain,
@@ -37,11 +37,11 @@ import {
 	// process,
 	remote,
 	screen,
-	shell, // Not yet used
+	shell // , // Not yet used
 	// SystemPreferences,	// Not yet used
 	// TouchBar,
 	// Tray,
-	webFrame
+	// webFrame
 } from 'electron';
 
 // E.g. This returns a BrowserWindow:
@@ -65,16 +65,16 @@ function isElectronAvailable(): boolean {
 })
 export class ElectronService {
 	private app: typeof app;
-	private browserView: typeof BrowserView;
+	// private browserView: typeof BrowserView;
 	private clipboard: typeof clipboard;
-	private crashReporter: typeof crashReporter;
-	private desktopCapturer: typeof desktopCapturer;
+	// private crashReporter: typeof crashReporter;
+	// private desktopCapturer: typeof desktopCapturer;
 	private _ipcRenderer: typeof ipcRenderer;
 	private _process: typeof process;
 	private remote: typeof remote;
 	private screen: typeof screen;
 	private shell: typeof shell;
-	private webFrame: typeof webFrame;
+	// private webFrame: typeof webFrame;
 
 	private _childProcess: typeof childProcess;
 	private _fs: typeof fs;
@@ -88,13 +88,13 @@ export class ElectronService {
 			this.app = electron.remote.app;
 			// this.browserWindow = electron.remote.browserWindow;
 			this.clipboard = electron.clipboard;
-			this.crashReporter = electron.crashReporter;
-			this.desktopCapturer = electron.desktopCapturer;
+			// this.crashReporter = electron.crashReporter;
+			// this.desktopCapturer = electron.desktopCapturer;
 			this._ipcRenderer = electron.ipcRenderer;
 			this._process = electron.remote.process;
 			this.screen = electron.screen;
 			this.shell = electron.shell;
-			this.webFrame = electron.webFrame;
+			// this.webFrame = electron.webFrame;
 
 			// If you want to use remote objects, please set enableRemoteModule to true in main.ts
 			this.remote = electron.remote;
@@ -210,8 +210,11 @@ export class ElectronService {
 		return this._fs;
 	}
 
-	public get homedir(): string {
-		return this._process.env['HOME'];
+	public get homedir(): string | undefined {
+		// return this._process.env['HOME'] || this._process.env['HOMEPATH'];
+		return this._process.env[
+			this._process.platform === 'win32' ? 'HOMEPATH' : 'HOME'
+		];
 	}
 
 	public get os(): typeof os {
@@ -446,6 +449,7 @@ export class ElectronService {
 			): void => {
 				this.addAsynchronousReplyOneTimeListener(
 					'set-progress-bar-value-reply',
+					// eslint-disable-next-line @typescript-eslint/no-unused-vars
 					(event: IpcRendererEvent, ...args: unknown[]): void => {
 						// console.log('setProgressBarValue() : set-progress-bar-value-reply reply:', args.length, ...args);
 

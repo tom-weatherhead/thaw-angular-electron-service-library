@@ -9,10 +9,10 @@ import { AppComponent } from './app.component';
 // import { AppRoutingModule } from './app-routing.module';
 
 // **** Service Modules ****
-import { ConfigurationModule } from './modules/configuration/configuration.module';
+// import { ConfigurationModule } from './modules/configuration/configuration.module';
 import { ElectronModule } from './modules/electron/electron.module';
-import { FileModule } from './modules/file/file.module';
-import { LoggerModule } from './modules/logger/logger.module';
+// import { FileModule } from './modules/file/file.module';
+// import { LoggerModule } from './modules/logger/logger.module';
 
 // **** Components ****
 
@@ -27,10 +27,10 @@ import { LoggerModule } from './modules/logger/logger.module';
 	declarations: [AppComponent],
 	providers: [
 		// E.g. Angular services
-		ConfigurationModule,
-		ElectronModule,
-		FileModule,
-		LoggerModule
+		// ConfigurationModule,
+		ElectronModule // ,
+		// FileModule,
+		// LoggerModule
 	],
 	exports: [],
 	bootstrap: [AppComponent]

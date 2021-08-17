@@ -1,4 +1,4 @@
-// angular-electron/src/app/services/electron.service.spec.ts
+// thaw-angular-electron-service-library/src/app/modules/services/electron/electron.service.spec.ts
 
 import { inject, TestBed } from '@angular/core/testing';
 
